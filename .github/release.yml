@@ -1,0 +1,25 @@
+changelog:
+  categories:
+    - title: 🚀 Features
+      labels:
+        - feature-release
+        - enhancement
+    - title: 🐛 Bug Fixes
+      labels:
+        - bug-fix-release
+        - bug
+    - title: 🛡️ Security
+      labels:
+        - security
+    - title: ⚡ Performance
+      labels:
+        - performance
+    - title: 📚 Documentation
+      labels:
+        - documentation
+    - title: 🧪 Testing
+      labels:
+        - testing
+    - title: Other Changes
+      labels:
+        - "*"

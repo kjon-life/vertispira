@@ -1,0 +1,73 @@
+name: Release Management
+
+on:
+  push:
+    branches:
+      - 'release/*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (0.n.m)'
+        required: true
+      type:
+        description: 'Release type (feature/bugfix)'
+        required: true
+        default: 'feature'
+
+jobs:
+  prepare-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      - name: Validate version format
+        run: |
+          if [[ ! ${{ github.event.inputs.version }} =~ ^0\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid version format. Must be 0.n.m"
+            exit 1
+          fi
+
+      - name: Update CHANGELOG
+        run: |
+          # Script to automatically update CHANGELOG.md
+          # You'll need to implement this based on your needs
+
+      - name: Create Release PR
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: 'Release ${{ github.event.inputs.version }}'
+          body: |
+            Release PR for version ${{ github.event.inputs.version }}
+            
+            ## Type: ${{ github.event.inputs.type }}
+            
+            ## Checklist
+            - [ ] CHANGELOG.md updated
+            - [ ] Documentation updated
+            - [ ] Migration guide created (if needed)
+            - [ ] Tests passing
+            - [ ] Performance benchmarks run
+          labels: |
+            release-planning
+            ${{ github.event.inputs.type }}-release
+          branch: 'release/${{ github.event.inputs.version }}'
+          base: main
+          draft: true
+
+  create-release:
+    needs: prepare-release
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ github.event.inputs.version }}
+          release_name: Release ${{ github.event.inputs.version }}
+          body_path: CHANGELOG.md
+          draft: true
+          prerelease: false

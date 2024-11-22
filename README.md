@@ -99,6 +99,26 @@ This project is possible because of these and other services:
 This project is possible because of these and other people:
 
 - [ ](URL) - for code and ideas
+
+## Development Process
+
+### Releases
+We follow a structured release process aligned with natural cycles. For details, see:
+- [Release Process](docs/process/release-process.md)
+- [Changelog](CHANGELOG.md)
+- [Security Policy](SECURITY.md)
+- [Migration Guides](docs/migrations/)
+
+### Version Schedule
+- Feature Releases: Quarterly (Equinoxes/Solstices)
+- Bug Fix Releases: As needed
+- [View Release Calendar](docs/process/release-calendar.md)
+
+### For Contributors
+- [Contribution Guidelines](CONTRIBUTING.md)
+- [Development Setup](docs/development/setup.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+
 ___ 
 ## Legal & Intellectual Property
 
