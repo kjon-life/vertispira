@@ -1,0 +1,75 @@
+name: Release Planning
+description: Template for planning upcoming releases
+title: "Release Plan: v0.N.0"
+labels: ["release-planning"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This template helps plan and track upcoming releases.
+        Please refer to our [Release Process](../docs/process/release-process.md).
+
+  - type: input
+    id: version
+    attributes:
+      label: Version Number
+      description: The version to be released
+      placeholder: "0.N.0"
+    validations:
+      required: true
+
+  - type: input
+    id: release_date
+    attributes:
+      label: Target Release Date
+      description: Planned release date (aligned with equinox/solstice)
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: true
+
+  - type: textarea
+    id: major_features
+    attributes:
+      label: Major Features
+      description: List the major features planned for this release
+      placeholder: |
+        - [ ] Feature 1
+        - [ ] Feature 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: breaking_changes
+    attributes:
+      label: Breaking Changes
+      description: List any breaking changes and required migrations
+      placeholder: |
+        - Change 1 (Migration Guide: #XXX)
+        - Change 2 (Migration Guide: #XXX)
+
+  - type: textarea
+    id: checklist
+    attributes:
+      label: Release Checklist
+      value: |
+        ### Pre-Release
+        - [ ] Feature freeze (2 weeks before release)
+        - [ ] Update CHANGELOG.md
+        - [ ] Create migration guides
+        - [ ] Update documentation
+        - [ ] Test suite passing
+        - [ ] Performance benchmarks
+        
+        ### Release Day
+        - [ ] Create release branch
+        - [ ] Final QA check
+        - [ ] Version bump
+        - [ ] Generate release notes
+        - [ ] Create GitHub release
+        - [ ] Deploy to production
+        
+        ### Post-Release
+        - [ ] Monitor metrics
+        - [ ] Send announcement email
+        - [ ] Update roadmap
+        - [ ] Release retrospective
