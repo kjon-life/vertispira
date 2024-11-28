@@ -105,7 +105,7 @@ This project is possible because of these and other people:
 
 ### Releases
 We follow a structured release process aligned with natural cycles. For details, see:
-- [Release Process](docs/process/release-process.md)
+- [Release Process](docs/process/release_process.md)
 - [Changelog](CHANGELOG.md)
 - [Security Policy](SECURITY.md)
 - [Migration Guides](docs/migrations/)
