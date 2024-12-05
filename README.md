@@ -10,7 +10,7 @@ Everything we build has far-reaching effects. None more so than `AI agents` or `
 
 The current plateau in LLM improvements seems to be stimulating interest in ways LLMs enable agentic workflows...the systems by which `AI systems` research, revise, improve.  The current vertex is one in which multiple agents collaborate--are collaborating--to create autonomous solutions.
 
-This project is an exploration of evals applied to agentic workflows. Applying modular development patterns to the most rapidly evolving field in history.
+As we outline a vertex of agentic workflows the focus shifts increasingly to evals. Applying modular development patterns to the most rapidly evolving field in history provides proven strategies for rapidly scaling and iterating a solution.
 
 <img align="right" width="300" src="https://user-images.githubusercontent.com/76539355/214731371-78cb7bcb-996d-4108-9872-7af758ed5647.png" alt="A Maia">
 
